@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-import Coinlist from './Coindetail';
+import Coin from './Coin';
 
-class Coin extends React.Component {
+class CoinList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {}
@@ -10,10 +10,10 @@ class Coin extends React.Component {
 
 	render() {
 		return (
-			<tbody>
+			<tbody className="coinlist__body">
 				{
 					this.props.coins.map((coin, index) => {
-						return <Coinlist coin={coin} key={index}/>
+						return <Coin coin={coin} key={index}/>
 					})
 				}	
 			</tbody>
@@ -21,4 +21,4 @@ class Coin extends React.Component {
 	}
 };
 
-export default Coin
+export default CoinList
